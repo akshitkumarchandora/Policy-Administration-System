@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KIRA PAS</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="home">
+	<header>
+		<div align="right">
+			<form th:action="@{/logout}" method="post">
+				<button type="submit">logout</button>
+			</form>
+		</div>
+		<h1 class="kira">KIRA Policy Administration System</h1>
+	</header>
+<div align="center">
+<h1>Business Property Details</h1>
+<table style="border: 1px solid black;border-collapse: collapse;">
+  <tr><td>Property ID:</td>
+    <td>
+<span th:text="${property.id}"></span>
+</td>
+  </tr>
+  <tr><td>Business ID:</td>
+    <td>
+<span th:text="${property.businessId}"></span></td>
+  </tr>
+  <tr><td>Consumer ID:</td>
+    <td>
+<span th:text="${property.consumerId}"></span></td>
+  </tr>
+  <tr><td>Insurance Type:</td>
+    <td>
+<span th:text="${property.insurancetype}"></span></td>
+  </tr>
+  <tr><td>Property Type:</td>
+    <td>
+<span th:text="${property.propertytype}"></span></td>
+  </tr>
+  <tr><td>Building Sqft:</td>
+    <td>
+<span th:text="${property.buildingsqft}"></span></td>
+  </tr>
+  <tr><td>Building Type:</td>
+    <td>
+<span th:text="${property.buildingtype}"></span></td>
+  </tr>
+  <tr><td>Building Storeys:</td>
+    <td>
+<span th:text="${property.buildingstoreys}"></span></td>
+  </tr>
+  <tr><td>Building Age:</td>
+    <td>
+<span th:text="${property.buildingage}"></span></td>
+  </tr>
+  <tr><td>Property Value:</td>
+    <td>
+<span th:text="${property.propertyvalue}"></span></td>
+  </tr>
+   <tr><td>Cost of the Asset:</td>
+    <td>
+<span th:text="${property.costoftheasset}"></span></td>
+  </tr>
+  <tr><td>Salvage Value:</td>
+    <td>
+<span th:text="${property.salvagevalue}"></span></td>
+  </tr>
+  <tr><td>Useful Life of the Asset:</td>
+    <td>
+<span th:text="${property.usefullifeoftheAsset}"></span></td>
+  </tr>
+   
+</table>
+
+</div>
+<br>
+<br>
+<table style="border: 1px solid black;border-collapse: collapse;">
+ <tr>
+ <th>Property Details</th>
+  <th>
+<span th:text="${property}" th:object="${details}"></span>
+</th>
+  </tr>
+</table>
+<script th:src="@{/webjars/jquery/3.5.1/jquery.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
+</body>
+</html>

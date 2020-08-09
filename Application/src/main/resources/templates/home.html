@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Kira PAS-HOME</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="home">
+	<header>
+		<div align="right">
+			<form th:action="@{/logout}" method="post">
+				<button type="submit">logout</button>
+			</form>
+		</div>
+		<h1 class="kira">KIRA Policy Administration System</h1>
+	</header>
+<div align="center">
+		<h2>Create Consumer Business</h2>
+		<form th:action="@{/createConsumerBusiness}" method="post">
+			<table>
+				<tr>
+					<td>First Name:</td>
+					<td><input name="firstname" id="firstname" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input name="lastname" id="lastname" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>DOB:</td>
+					<td><input name="dob" id="dob" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Name:</td>
+					<td><input name="businessname" id="businessname" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Pan Details:</td>
+					<td><input name="pandetails" id="pandetails" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input name="email" id="email" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input name="phone" id="phone" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Website:</td>
+					<td><input name="website" id="website" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Overview:</td>
+					<td><input name="businessoverview" id="businessoverview"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Validity:</td>
+					<td><input name="validity" id="validity" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Agent Name:</td>
+					<td><input name="agentname" id="agentname" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Agent Id:</td>
+					<td><input name="agentid" id="agentid" type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Category:</td>
+					<td><input name="businesscategory" id="businesscategory"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Type:</td>
+					<td><input name="businesstype" id="businesstype" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Turnover:</td>
+					<td><input name="businessturnover" id="businessturnover"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Capital Invested:</td>
+					<td><input name="capitalinvested" id="capitalinvested"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Total Employees</td>
+					<td><input name="totalemployees" id="totalemployees"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Age:</td>
+					<td><input name="businessage" id="businessage" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit"
+						value="Create Consumer Business" /></td>
+				</tr>
+			</table>
+		</form>
+		<table>
+			<tr>
+				<td><h6>Consumer Business Status:</h6></td>
+				<td><h6>
+						<span th:text="${consumerbusinessstatus}"></span>
+					</h6></td>
+			</tr>
+		</table>
+
+		<br> <br>
+		<h2>View Consumer Business</h2>
+		<form th:action="@{/viewConsumerBusiness}" method="get">
+			<table>
+				<tr>
+					<td>Consumer ID:</td>
+					<td><input name="consumerid" id="consumerid" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit"
+						value="View Consumer Business" /></td>
+				</tr>
+			</table>
+		</form>
+		<br> <br>
+		<h2>Update Consumer Business</h2>
+		<form th:action="@{/updateConsumerBusiness}" method="post">
+			<table>
+				<tr>
+					<td>First Name:</td>
+					<td><input name="firstname" id="firstname" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input name="lastname" id="lastname" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>DOB:</td>
+					<td><input name="dob" id="dob" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Name:</td>
+					<td><input name="businessname" id="businessname" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Pan Details:</td>
+					<td><input name="pandetails" id="pandetails" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input name="email" id="email" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input name="phone" id="phone" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Website:</td>
+					<td><input name="website" id="website" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Overview:</td>
+					<td><input name="businessoverview" id="businessoverview"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+				<tr>
+					<td>Validity:</td>
+					<td><input name="validity" id="validity" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Agent Name:</td>
+					<td><input name="agentname" id="agentname" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Agent Id:</td>
+					<td><input name="agentid" id="agentid" type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Id:</td>
+					<td><input name="businessid" id="businessid" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Consumer Id:</td>
+					<td><input name="consumerId" id="consumerId" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Category:</td>
+					<td><input name="businesscategory" id="businesscategory"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Type:</td>
+					<td><input name="businesstype" id="businesstype" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Turnover:</td>
+					<td><input name="businessturnover" id="businessturnover"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Capital Invested:</td>
+					<td><input name="capitalinvested" id="capitalinvested"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Total Employees</td>
+					<td><input name="totalemployees" id="totalemployees"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Value:</td>
+					<td><input name="businessvalue" id="businessvalue"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Age:</td>
+					<td><input name="businessage" id="businessage" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit"
+						value="Update Consumer Business" /></td>
+				</tr>
+
+			</table>
+		</form>
+		<table>
+			<tr>
+				<td><h6>Consumer Business Status:</h6></td>
+				<td><h6>
+						<span th:text="${consumerbusinessupdate}"></span>
+					</h6></td>
+			</tr>
+		</table>
+
+		<br> <br>
+		<h2>Create Business Property</h2>
+		<form th:action="@{/createBusinessProperty}" method="post">
+			<table>
+				<tr>
+					<td>Business ID:</td>
+					<td><input name="businessId" id="businessId" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Consumer ID:</td>
+					<td><input name="consumerId" id="consumerId" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Insurance Type:</td>
+					<td><input name="insurancetype" id="insurancetype" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Property Type:</td>
+					<td><input name="propertytype" id="propertytype" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Building sqft:</td>
+					<td><input name="buildingsqft" id="buildingsqft" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Building Type:</td>
+					<td><input name="buildingtype" id="buildingtype" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Building Storeys:</td>
+					<td><input name="buildingstoreys" id="buildingstoreys"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Building Age:</td>
+					<td><input name="buildingage" id="buildingage" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Cost of the Asset:</td>
+					<td><input name="costoftheasset" id="costoftheasset"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Salvage Value:</td>
+					<td><input name="salvagevalue" id="salvagevalue" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Useful Life of the Asset:</td>
+					<td><input name="usefullifeoftheAsset"
+						id="usefullifeoftheAsset" type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit"
+						value="Create Business Property" /></td>
+				</tr>
+
+			</table>
+		</form>
+		<table>
+			<tr>
+				<td><h6>Business Property Status:</h6></td>
+				<td><h6>
+						<span th:text="${businessproperystatus}"></span>
+					</h6></td>
+			</tr>
+		</table>
+
+
+		<br> <br>
+		<h2>View Consumer Property</h2>
+		<form th:action="@{/viewConsumerProperty}" method="get">
+			<table>
+				<tr>
+					<td>Consumer ID:</td>
+					<td><input name="consumerid" id="consumerid" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Property ID:</td>
+					<td><input name="propertyid" id="propertyid" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit"
+						value="View Consumer Property" /></td>
+				</tr>
+			</table>
+		</form>
+		<br> <br>
+		<h2>Update Business Property</h2>
+		<form th:action="@{/updateBusinessProperty}" method="post">
+			<table>
+				<tr>
+					<td>Property Id:</td>
+					<td><input name="propertyId" id="propertyId" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Business ID:</td>
+					<td><input name="businessId" id="businessId" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Consumer ID:</td>
+					<td><input name="consumerId" id="consumerId" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Insurance Type:</td>
+					<td><input name="insurancetype" id="insurancetype" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Property Type:</td>
+					<td><input name="propertytype" id="propertytype" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Building sqft:</td>
+					<td><input name="buildingsqft" id="buildingsqft" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Building Type:</td>
+					<td><input name="buildingtype" id="buildingtype" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Building Storeys:</td>
+					<td><input name="buildingstoreys" id="buildingstoreys"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Building Age:</td>
+					<td><input name="buildingage" id="buildingage" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Cost of the Asset:</td>
+					<td><input name="costoftheasset" id="costoftheasset"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Salvage Value:</td>
+					<td><input name="salvagevalue" id="salvagevalue" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Useful Life of the Asset:</td>
+					<td><input name="usefullifeoftheAsset"
+						id="usefullifeoftheAsset" type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit"
+						value="Update Business Property" /></td>
+				</tr>
+			</table>
+		</form>
+		<table>
+			<tr>
+				<td><h6>Business Property Status:</h6></td>
+				<td><h6>
+						<span th:text="${businesspropteryupdate}"></span>
+					</h6></td>
+			</tr>
+		</table>
+
+		<br> <br>
+		<h2>View Quotes</h2>
+		<form th:action="@{/getQuotes}" method="get">
+			<table>
+				<tr>
+					<td>Business Value:</td>
+					<td><input name="businessValue" id="businessValue"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Property Value:</td>
+					<td><input name="propertyValue" id="propertyValue"
+						type="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>Property Type:</td>
+					<td><input name="propertyType" id="propertyType" type="text"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="View Quotes" /></td>
+				</tr>
+
+			</table>
+		</form>
+		<table>
+			<tr>
+				<td><h6>Quotes:</h6></td>
+				<td><h6>
+						<span th:text="${quotes}"></span>
+					</h6></td>
+			</tr>
+		</table>
+		<br> <br>
+		<h2>Create Policy</h2>
+		<form th:action="@{/createPolicy}" method="post">
+			<table>
+				<tr>
+					<td>Consumer ID:</td>
+					<td><input name="consumerid" id="consumerid" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Accepted Quotes</td>
+					<td><input name="acceptedquotes" id="acceptedquotes"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Create Policy" />
+					</td>
+				</tr>
+
+			</table>
+		</form>
+		<table>
+			<tr>
+				<td><h6>Policy Status:</h6></td>
+				<td><h6>
+						<span th:text="${policystatus}"></span>
+					</h6></td>
+			</tr>
+		</table>
+		<br> <br>
+		<h2>Issue Policy</h2>
+		<form th:action="@{/issuePolicy}" method="post">
+			<table>
+				<tr>
+					<td>Policy ID:</td>
+					<td><input name="policyid" id="policyid" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Consumer ID:</td>
+					<td><input name="consumerid" id="consumerid" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Business Id:</td>
+					<td><input name="businessid" id="businessid" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Payment Details:</td>
+					<td><input name="paymentdetails" id="paymentdetails"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td>Acceptance Status</td>
+					<td><input name="acceptancestatus" id="acceptancestatus"
+						type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Issue Policy" /></td>
+				</tr>
+
+			</table>
+		</form>
+		<table>
+			<tr>
+
+				<td><h6>Issue Policy Status:</h6></td>
+				<td><h6>
+						<span th:text="${issuePolicyStatus}"></span>
+					</h6></td>
+
+			</tr>
+		</table>
+		<br> <br>
+		<h2>View Policy</h2>
+		<form th:action="@{/viewPolicy}" method="get">
+			<table>
+				<tr>
+					<td>Consumer ID:</td>
+					<td><input name="consumerid" id="consumerid" type="number"
+						value="" /></td>
+				</tr>
+				<tr>
+					<td>Policy ID:</td>
+					<td><input name="policyid" id="policyid" type="text" value="" /></td>
+				</tr>
+
+				<tr>
+					<td colspan="2"><input type="submit" value="View Policy" /></td>
+				</tr>
+			</table>
+		</form>
+		<br> <br>
+	</div>
+
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.js}"></script>
+	<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
+</body>
+</html>

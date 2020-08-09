@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KIRA PAS</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="home">
+	<header>
+		<div align="right">
+			<form th:action="@{/logout}" method="post">
+				<button type="submit">logout</button>
+			</form>
+		</div>
+		<h1 class="kira">KIRA Policy Administration System</h1>
+	</header>
+<div align="center">
+<h1>Consumer Business Details</h1>
+<table style="border: 1px solid black;border-collapse: collapse;">
+ 
+  <tr><td>First Name:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.firstname}"></span>
+</td>
+  </tr>
+  <tr><td>Last Name:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.lastname}"></span></td>
+  </tr>
+  <tr><td>DOB:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.dob}"></span></td>
+  </tr>
+  <tr><td>Business Name:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.businessname}"></span></td>
+  </tr>
+  <tr><td>Pan Details:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.pandetails}"></span></td>
+  </tr>
+  <tr><td>Email:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.email}"></span></td>
+  </tr>
+  <tr><td>Phone:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.phone}"></span></td>
+  </tr>
+  <tr><td>Website:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.website}"></span></td>
+  </tr>
+  <tr><td>Business Qverview:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.businessoverview}"></span></td>
+  </tr>
+  <tr><td>Validity:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.validity}"></span></td>
+  </tr>
+  <tr><td>Agent Name:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.agentname}"></span></td>
+  </tr>
+  <tr><td>Agent Id:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.agentid}"></span></td>
+  </tr>
+  <tr><td>Business ID:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.businessid}"></span></td>
+  </tr>
+  <tr><td>Consumer ID:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.consumerId}"></span></td>
+  </tr>
+  <tr><td>Business Category:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.businesscategory}"></span></td>
+  </tr>
+  <tr><td>Business Type:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.businesstype}"></span></td>
+  </tr>
+  <tr><td>Business Turn Over:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.businessturnover}"></span></td>
+  </tr>
+  <tr><td>Capital Invested:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.capitalinvested}"></span></td>
+  </tr>
+  <tr><td>Total Employees:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.totalemployees}"></span></td>
+  </tr>
+  <tr><td>Business Value:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.businessvalue}"></span></td>
+  </tr>
+  <tr><td>Business Age:</td>
+    <td>
+<span th:text="${consumerBusinessDetails.businessage}"></span></td>
+  </tr>
+ 
+</table>
+</div>
+<br>
+<br>
+<table style="border: 1px solid black;border-collapse: collapse;">
+<tr>
+ <th>Consumer Business Details</th>
+  <th>
+<span th:text="${consumerBusinessDetails}" th:object="${details}"></span>
+</th>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<script th:src="@{/webjars/jquery/3.5.1/jquery.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
+</body>
+</html>

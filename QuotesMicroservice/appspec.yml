@@ -1,0 +1,17 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-west-2:130475542568:task-definition/pod6-quotesservice-task:1"
+        LoadBalancerInfo:
+          ContainerName: "quotes-container"
+          ContainerPort: "8666"
+        PlatformVersion: "LATEST"
+ 
+# It says where you want ot deploy (ECS)
+# Where task definition resides
+# what is the container name
+# Which platefomr version you want to use - Latest
+# Search for "appspec template ecs" - https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-example.html
+# How to get task deifnition -> click on json tab -> look for taskdefntionarn: arn:aws:ecs:us-east-1:187458058072:task-definition/booksapp-task:12",

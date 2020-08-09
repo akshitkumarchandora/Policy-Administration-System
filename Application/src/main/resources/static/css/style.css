@@ -1,0 +1,162 @@
+@font-face {
+  font-family: rajdhani-bold;
+  src: url("/fonts/Rajdhani-Bold.ttf");
+}
+
+@font-face {
+  font-family: rajdhani-light;
+  src: url("/fonts/Rajdhani-Light.ttf");
+}
+
+@font-face {
+  font-family: rajdhani-medium;
+  src: url("/fonts/Rajdhani-Medium.ttf");
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/*============================= HEADER STYLES ===================================*/
+header {
+    width: 100%;
+    height: 85px;
+    background: white;
+    position: fixed;
+    top: 0px;
+}
+
+
+/*============================= LOGIN PAGE STYLES ==============================*/
+
+.form {
+    padding-top: 27.2vh;
+}
+
+.form__title {
+    font-family: rajdhani-bold, sans-serif;
+    font-size: 3.5em;
+}
+
+.form__subtitle {
+    font-family: rajdhani-medium, sans-serif;
+    color: #747b81;
+}
+
+.form-control {
+    font-family: rajdhani-medium, sans-serif;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #747b81;
+    border-radius: 0px;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+
+}
+
+.form-control:active, .form-control:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid #4a4a4a;
+}
+
+.form__button {
+    padding: 12px 50px;
+    font-family: rajdhani-bold;
+    color: white;
+    letter-spacing: 2px;
+    background: #2e2e3d;
+    border: 1px solid #2e2e3d;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+.form__button:hover {
+    color: #2e2e3d;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: 1px solid #2e2e3d;
+}
+
+.shadow {
+    box-shadow: 0 17px 51px 0 rgba(0,0,0,.11);
+}
+
+
+/*============================ HOME PAGE STYLE ===================================*/
+
+.home{
+		padding-top: 10%;
+	
+}
+
+.kira{
+	font-weight: bold;
+	color: #8a2be2;
+	text-align:center;
+}
+
+table {
+    margin-bottom: 0px !important;
+}
+.table th, .table td, .table thead th {
+    padding: 0.75em 8em;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 2px solid #2c2c37;
+}
+
+
+table tbody {
+    border-radius: 25px;
+}
+
+.table-grey {
+    font-family: rajdhani-medium, sans-serif;
+    border-radius: 10px;
+    background: #41434e;
+}
+
+.block-grey {
+    width: 100%;
+    background: #41434e;
+    border-radius: 10px;
+}
+
+.stock {
+    position: relative;
+    font-family: rajdhani-medium;
+    padding: 20px;
+    border-bottom: 2px solid #2c2c37;
+}
+
+.stock__search {
+    font-size: 1em;
+    font-family: rajdhani-medium, sans-serif;
+    color: white;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    font-family: rajdhani-medium,sans-serif;
+    background: #2c2c37 !important;
+}
+
+
+.sel-btn {
+    padding: 12px 50px;
+    font-family: rajdhani-bold;
+    color: #2e2e3d;
+    letter-spacing: 2px;
+    background: white;
+    border: 1px solid #2e2e3d;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+

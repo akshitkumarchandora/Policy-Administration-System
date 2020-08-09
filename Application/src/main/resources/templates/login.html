@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KIRA PAS Login</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 offset-md-1 col-lg-4 offset-lg-1">
+            <form class="form" method="post" th:action="@{/account/login}">
+                <h2 class="form__title text-uppercase">KIRA PAS</h2>
+                <p class="form__subtitle text-justify">We offers Business insurance that protects businesses from losses due to events that may occur during the normal course of business. There are many types of insurance it provides for businesses including coverage for property damage, legal liability and employee-related risks.</p>
+                <div class="form-group mt-4">
+                    <input type="text" class="form-control" placeholder="Enter your email" name="email" id="email">
+                </div>
+                <div class="form-group mt-3">
+                    <input type="password" class="form-control" placeholder="Enter your password" name="password" id="password">
+                </div>
+                <button type="submit" class="form__button">Login</button>
+            </form>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 offset-md-1 col-lg-6 offset-lg-1">
+            <div class="container mt-5 shadow">
+                <img th:src="@{/images/laptop.png}" width="100%" class="mt-5" style="position: relative;right: 10%;">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/3.5.1/jquery.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    show_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+              
+management:
+  endpoints:
+    web.base-path: /manage              
+
+jwt:
+  secretKey: a!m@12itha!m@12itha!m@12itha!m@12itha!m@12itha!m@12itha!m@12itha!m@12ith
+  tokenPrefix: Bearer
+  tokenExpirationDate: 15
+  tokenHeader: Authorization
+  claimsName: authorities
+  authority: authority

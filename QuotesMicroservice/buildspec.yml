@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+    install: 
+        runtime-versions:
+            java: corretto8
+            docker: 18
+    pre_build:
+        commands:
+            - echo "Pre_build"
+            - echo Logging in to Amazon ECR
+            - $(aws ecr get-login  --no-include-email --region us-west-2)
+    build:
+        commands:
+            - echo "Build"
+            - echo "I am a new Build"
+            - echo "Entered build phase"
+            - echo "Building Java"
+            - cd QuotesMicroservice
+            - mvn clean package
+            - docker build -t quotesmicroservice .
+            - docker tag quotesmicroservice 130475542568.dkr.ecr.us-west-2.amazonaws.com/pod-6-quotes-registry:quotesservice
+    post_build:
+        commands:
+            - echo "Post_build"
+            - docker push 130475542568.dkr.ecr.us-west-2.amazonaws.com/pod-6-quotes-registry:quotesservice
+            - printf '[{"name":"quotes-container","imageUri":"%s"}]' 130475542568.dkr.ecr.us-west-2.amazonaws.com/pod-6-quotes-registry:quotesservice > taskdefinition.json
+            - cat taskdefinition.json
+
+
+artifacts:
+     files: 
+            - QuotesMicroservice/taskdefinition.json
+
