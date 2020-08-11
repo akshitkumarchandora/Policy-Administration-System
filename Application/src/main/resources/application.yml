@@ -8,3 +8,9 @@ jwt:
   tokenHeader: Authorization
   claimsName: authorities
   authority: authority
+  
+AUTHORIZATION_SERVICE: POD-6-LB-689554527.us-west-2.elb.amazonaws.com
+
+POLICY_SERVICE: POD-6-LB-689554527.us-west-2.elb.amazonaws.com
+
+CONSUMER_SERVICE: POD-6-LB-689554527.us-west-2.elb.amazonaws.com

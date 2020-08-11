@@ -17,6 +17,7 @@ import lombok.*;
 @Getter
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class QuotesMaster  {
 	
 	@Id

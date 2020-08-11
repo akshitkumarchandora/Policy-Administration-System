@@ -13,8 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import com.cognizant.pas.quotes.QuotesMicroserviceApplication;
-import com.cognizant.pas.quotes.controller.QuotesController;
+
 import com.cognizant.pas.quotes.models.QuotesMaster;
 import com.cognizant.pas.quotes.repository.QuotesMasterRepository;
 
